@@ -1,0 +1,20 @@
+<table class="table table-bordered bg-secondary text-dark">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Skillsets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let skill of skills">
+                <td>{{skill.category}}</td>
+                <td>                    
+                    <ul>
+                        <li *ngFor="let sk of skill.skillSets;let i=index">
+                            {{sk}}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+</table>

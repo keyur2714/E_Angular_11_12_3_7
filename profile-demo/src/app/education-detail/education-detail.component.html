@@ -1,0 +1,36 @@
+<table class="table table-bordered bg-dark text-info">
+    <thead>
+        <tr>
+            <th>Degree</th>
+            <th>Percentage</th>
+            <th>Year</th>
+            <th>University</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>{{education[0].degree}}</td>
+            <td>{{education[0].per}}</td>
+            <td>{{education[0].year}}</td>
+            <td>{{education[0].university}}</td>
+        </tr>
+        <tr>
+            <td>{{education[1].degree}}</td>
+            <td>{{education[1].per}}</td>
+            <td>{{education[1].year}}</td>
+            <td>{{education[1].university}}</td>
+        </tr>
+        <tr>
+            <td>{{education[2].degree}}</td>
+            <td>{{education[2].per}}</td>
+            <td>{{education[2].year}}</td>
+            <td>{{education[2].university}}</td>
+        </tr> -->
+        <tr *ngFor="let education of educations">
+            <td ngClass="myTdClass">{{education.degree}}</td>
+            <td ngClass="myTdClass">{{education.per}}</td>
+            <td ngClass="myTdClass">{{education.year}}</td>
+            <td ngClass="myTdClass">{{education.university}}</td>
+        </tr>
+    </tbody>
+</table>

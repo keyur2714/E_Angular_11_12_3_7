@@ -11,10 +11,15 @@ export class PersonalDetailsComponent implements OnInit {
   lastName : string = 'Thakor';
   age : number = 34;
   gender : string = 'Male';
+  dateOfBirth : Date = new Date();
 
-  constructor() { }
+  constructor() { 
+    console.log("Personal Details Component Object Created...!");
+  }
 
   ngOnInit(): void {
+    console.log("Personal Details Component Initialized...!");
+    this.dateOfBirth = new Date("1986-12-27");
   }
 
 }
