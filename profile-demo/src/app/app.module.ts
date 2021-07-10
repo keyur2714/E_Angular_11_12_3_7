@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { EducationDetailComponent } from './education-detail/education-detail.component';
 import { SkillsComponent } from './skills/skills.component';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -13,6 +14,7 @@ import { SkillsComponent } from './skills/skills.component';
     PersonalDetailsComponent,
     EducationDetailComponent,
     SkillsComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule

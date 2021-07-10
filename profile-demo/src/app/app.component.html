@@ -1,20 +1,31 @@
 <div class="container">
     <div class="row">
-        <div class="col">
-            <h1>{{msg}}</h1>
+        <div class="col">            
+            <app-message 
+                message="Hi Good Afternoon...!" 
+                message-type="warning"
+            >
+            </app-message>
         </div>
-        <div class="col">
-            <p>{{name}}</p>
+        <div class="col">            
+            <app-message [message]="name"></app-message>
         </div>
     </div>    
     <div class="row">
         <div class="col">
-            <div class="card">
-                <div class="card-header bg-info text-datk">
-                    Personal Details
+            <div class="card" *ngFor="let person of personList">
+                <div class="card-header bg-success text-datk">
+                    <app-message message="Personal Details of {{person.firstName}}" message-type="warning"></app-message>
                 </div>
-                <div class="car-body">
-                    <app-personal-details></app-personal-details>
+                <div class="car-body">                    
+                    <app-personal-details
+                        [first-name]="person.firstName"
+                        [last-name]="person.lastName"
+                        [age]="person.age"                    
+                        [gender]="person.gender"
+                        [date-of-birth]="person.dateOfBirth"
+                    >
+                    </app-personal-details>
                 </div>
             </div>            
         </div>

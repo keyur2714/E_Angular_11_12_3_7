@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-personal-details',
@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDetailsComponent implements OnInit {
 
-  firstName : string = 'Keyursinh';
-  lastName : string = 'Thakor';
-  age : number = 34;
-  gender : string = 'Male';
-  dateOfBirth : Date = new Date();
+  @Input("first-name") firstName : string = 'Keyursinh';
+  @Input("last-name") lastName : string = 'Thakor';
+  @Input("age") age : number = 34;
+  @Input("gender") gender : string = 'Male';
+  @Input("date-of-birth") dateOfBirth : Date = new Date();
 
   constructor() { 
     console.log("Personal Details Component Object Created...!");
@@ -19,7 +19,7 @@ export class PersonalDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Personal Details Component Initialized...!");
-    this.dateOfBirth = new Date("1986-12-27");
+    //this.dateOfBirth = new Date("1986-12-27");
   }
 
 }
