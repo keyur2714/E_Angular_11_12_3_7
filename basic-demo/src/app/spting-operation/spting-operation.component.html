@@ -1,0 +1,23 @@
+<div class="row form-group">
+    <div class="col-sm-4">
+        Enter Any String : 
+    </div>
+    <div class="col-sm-4">
+        <input type="text" name=str class="form-control" [(ngModel)]="str">
+    </div>
+    <!-- <div class="col">
+        {{str}}
+    </div> -->
+</div>
+<div class="row form-group">
+    <div class="col-sm-8">
+        <button class="btn btn-info m-1" (click)="toUpper()">ToUpper</button>
+        <button class="btn btn-success m-1" (click)="toLower()">ToLower</button>
+        <button class="btn btn-danger m-1" (click)="reverse()">Reverse</button>
+    </div>
+</div>
+<div class="row form-group" *ngIf="result !== ''">
+    <div class="col-sm-8">
+        Result is : {{result}}
+    </div>
+</div>

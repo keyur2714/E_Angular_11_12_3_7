@@ -1,0 +1,44 @@
+<div class="row m-1">
+    <div class="col">
+        Enter New Friend Name : 
+    </div>
+    <div class="col">
+        <input type="text" name=name class="form-control" [(ngModel)]="newFriend.name">
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col">
+        Enter Mobile Number : 
+    </div>
+    <div class="col">
+        <input type="text" name=mobileNo class="form-control" [(ngModel)]="newFriend.mobileNo">
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col">
+        <button class="btn btn-info" (click)="save()" *ngIf="editInx === -1">Save</button>
+        <button class="btn btn-info" (click)="update()" *ngIf="editInx !== -1">Update</button>
+    </div>
+</div>
+
+<hr>
+
+<table class="table table-bordered bg-dark text-info">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile No</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let friend of friends;let i=index">
+            <td>{{friend.name}}</td>
+            <td>{{friend.mobileNo}}</td>
+            <td>
+                <button class="btn btn-success m-1" (click)=edit(i)>Edit</button>
+                <button class="btn btn-danger m-1" (click)=delete(i)>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
