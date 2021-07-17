@@ -1,0 +1,57 @@
+<!-- <table class="table table-bordered bg-warning text-dark">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Fees</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courseList">
+            <td>{{course.id}}</td>
+            <td>{{course.courseCode}}</td>
+            <td>{{course.courseName}}</td>
+            <td>{{course.fees}}</td>        
+        </tr>
+    </tbody>
+</table> -->
+<div class="row">
+    <div class="col-sm-4">
+        <select name="course" class="form-control" [(ngModel)]="currentCourse">
+            <option value="0">-:Select Course:-</option>
+            <option *ngFor="let course of courseList" [ngValue]="course">        
+                {{course.courseName}}
+            </option>
+        </select>
+    </div>
+</div>
+<app-my-grid
+    [dataList]="courseList"
+    [headerList]="headerList"
+    [fieldList]="fieldList"
+    bgColor="warning"
+    textColor="dark"
+    (getSelectedItem)="selectedCourse($event)"
+>
+</app-my-grid>
+
+<!-- {{currentCourse | json}} -->
+<div class="row" *ngIf="currentCourse.id !== -0">
+    <div class="col-sm-4">
+        <table class="table table-bordered">
+            <tr>
+                <th>Course Code : </th>
+                <td>{{currentCourse.courseCode}}</td>
+            </tr>
+            <tr>
+                <th>Course Name : </th>
+                <td>{{currentCourse.courseName}}</td>
+            </tr>
+            <tr>
+                <th>Course Fees : </th>
+                <td>{{currentCourse.fees}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

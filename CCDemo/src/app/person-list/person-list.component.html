@@ -1,0 +1,65 @@
+<!-- <table class="table table-bordered bg-dark text-info">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>City</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of personList">
+            <td>{{person.id}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.mobileNo}}</td>
+            <td>{{person.city}}</td>
+            <td>{{person.age}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="row">
+    <div class="col-sm-4">
+        <select name="person" class="form-control" [(ngModel)]="currentPerson">
+            <option value="0">-:Select Person:-</option>
+            <option *ngFor="let person of personList" [ngValue]="person">        
+                {{person.name}}
+            </option>
+        </select>
+    </div>
+</div>
+<app-my-grid
+    [dataList]="personList"
+    [headerList]="headerList"
+    [fieldList]="fieldList"
+    (getSelectedItem)="selectedPerson($event)"
+>
+</app-my-grid>
+<div class="row" *ngIf="currentPerson.id !== 0">
+    <div class="col-sm-4">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name : </th>
+                <td>{{currentPerson.name}}</td>
+            </tr>
+            <tr>
+                <th>Email : </th>
+                <td>{{currentPerson.email}}</td>
+            </tr>
+            <tr>
+                <th>Mobile No : </th>
+                <td>{{currentPerson.mobileNo}}</td>
+            </tr>
+            <tr>
+                <th>City : </th>
+                <td>{{currentPerson.city}}</td>
+            </tr>
+            <tr>
+                <th>Age : </th>
+                <td>{{currentPerson.age}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
