@@ -1,0 +1,49 @@
+<div class="row form-group">
+    <div class="col">
+        Enter your Name : 
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" name=name #nm /> 
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        Enter your Age : 
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" name=age #a /> 
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+       <button class="btn btn-info" (click)="checkEligibility()">Check Eligibility</button>
+    </div>
+</div>
+
+<div #msg>
+    Hello Radhe Krishna...
+</div>
+
+    
+<!-- //in Angular 2/4 we need to do this for else condition
+<div *ngIf="! isEligibile">
+    <span>{{name.value}} is Not Eligible for Voting</span>
+</div> -->
+
+<div *ngIf="isEligibile !== ''">
+    <div *ngIf="isEligibile == 'true';then ifBlock else elseBlock">    
+    </div>
+</div>
+
+<ng-template #ifBlock>
+    <!-- <span>{{name.value}} is Eligible for Voting</span> -->
+    <app-result>
+        <h1>{{name.value}} is Eligible for Voting</h1>
+    </app-result>
+</ng-template>
+
+<ng-template #elseBlock>
+    <!-- <span></span> -->
+    <app-result>{{name.value}} is Not Eligible for Voting</app-result>
+</ng-template>    
+
