@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 appColor [color]="myColor" [font-size]="myFontSize">{{title}}</h1>
+    </div>
+    <div class="col">
+      <p appColor>Hello Radhe Krishna...!</p>
+    </div>
+  </div>
+  <div class="row" appColor color="green" font-size="50px">
+    <div class="col">
+      Hello Radhe Krishna...!
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" name=str #s class="form-control" app-validate (blur)="validateStr(s.value)" >
+    </div>    
+  </div>
+</div>
