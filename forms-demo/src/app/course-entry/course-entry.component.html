@@ -1,0 +1,31 @@
+<form #frm=ngForm (ngSubmit)="save(frm)">
+    <div class="row m-1">
+        <div class="col-sm-4">
+            <sup>*</sup>Course Code :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=courseCode class="form-control" ngModel required>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            <sup>*</sup>Course name :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=courseName class="form-control" ngModel required>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            <sup>*</sup>Course Fees :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=fees class="form-control" ngModel required>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col">
+            <button class="btn btn-info" [disabled]="frm.invalid">Submit</button>
+        </div>
+    </div>
+</form>
