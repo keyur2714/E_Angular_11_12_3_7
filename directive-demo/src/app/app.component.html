@@ -12,9 +12,21 @@
       Hello Radhe Krishna...!
     </div>
   </div>
-  <div class="row">
+  <div class="row" *appMyIf="true">
     <div class="col">
       <input type="text" name=str #s class="form-control" app-validate (blur)="validateStr(s.value)" >
     </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+      <ng-template [ngIf]="false">
+        <p>Hello From Template</p>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row" *appMyLoop="10;data:'keyur'">
+    <div class="col">
+      <h1>Good Afternoon</h1>
+    </div>
   </div>
 </div>
