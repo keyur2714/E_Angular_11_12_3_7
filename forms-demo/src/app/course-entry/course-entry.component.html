@@ -4,7 +4,11 @@
             <sup>*</sup>Course Code :
         </div>
         <div class="col-sm-4">
-            <input type="text" name=courseCode class="form-control" ngModel required>
+            <input type="text" name=courseCode class="form-control" [(ngModel)]="course.courseCode" required minlength="3" #courseCode=ngModel>
+        </div>
+        <div class="col-sm-4" *ngIf="courseCode.invalid && courseCode.touched">            
+            <span *ngIf="courseCode.errors['required']">Course Code is Mandatory Field.</span>
+            <span *ngIf="courseCode.errors['minlength']">Course Code is Min 3 Character.</span>
         </div>
     </div>
     <div class="row m-1">
@@ -12,7 +16,10 @@
             <sup>*</sup>Course name :
         </div>
         <div class="col-sm-4">
-            <input type="text" name=courseName class="form-control" ngModel required>
+            <input type="text" name=courseName class="form-control" [(ngModel)]="course.courseName" required #courseName=ngModel>
+        </div>
+        <div class="col-sm-4" *ngIf="courseName.invalid && courseName.touched">
+            Course Name is Mandatory Field.
         </div>
     </div>
     <div class="row m-1">
@@ -20,7 +27,31 @@
             <sup>*</sup>Course Fees :
         </div>
         <div class="col-sm-4">
-            <input type="text" name=fees class="form-control" ngModel required>
+            <input type="text" name=fees class="form-control" [(ngModel)]="course.fees" required #fees=ngModel pattern="^[0-9]+$">
+        </div>
+        <div class="col-sm-4" *ngIf="fees.invalid && fees.touched">            
+            <span *ngIf="fees.errors['required']">Course Fees is Mandatory Field..</span>
+            <span *ngIf="fees.errors['pattern']">Only Digits allowed in Fees.</span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            Trainer : 
+        </div>
+        <div class="col-sm-4">
+            <select name="trainer" [(ngModel)]="course.trainer" class="form-control">
+                <option value="-1">-:Select Trainer:-</option>                
+                <option *ngFor="let trainer of trainerList" [ngValue]="trainer">{{trainer.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            Course Type : 
+        </div>
+        <div class="col-sm-4">
+            <input type="radio" class="form-check-input" name=courseCategory value="ONLINE" [(ngModel)]=course.courseCategory>Online
+            <input type="radio" class="form-check-input" name=courseCategory value="OFFLINE" [(ngModel)]=course.courseCategory>Offline
         </div>
     </div>
     <div class="row m-1">

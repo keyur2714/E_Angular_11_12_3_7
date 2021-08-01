@@ -1,0 +1,52 @@
+<form [formGroup]="personForm" (ngSubmit)="save()">
+    <div class="row m-1">
+        <div class="col-sm-4">
+            Name : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="col-sm-4" *ngIf="personForm.get('name').invalid && personForm.get('name').touched">
+            Name is Mandatory field.
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            Email : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="col-sm-4" *ngIf="personForm.get('email').invalid && personForm.get('email').touched">
+            <span *ngIf="personForm.get('email').errors['required']">Email Address is required.</span>
+            <span *ngIf="personForm.get('email').errors['email']">Invalid Email Address.</span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            Mobile No : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="mobileNo">
+        </div>
+        <div class="col-sm-4" *ngIf="personForm.get('mobileNo').invalid && personForm.get('mobileNo').touched">
+            <span *ngIf="personForm.get('mobileNo').errors['required']">Mobile Number is required.</span>
+            <span *ngIf="personForm.get('mobileNo').errors['pattern']">Invalid Mobile Number.</span>
+            <span *ngIf="personForm.get('mobileNo').errors['minlength']">Min 10 Char required in mobile Number.</span>
+            <span *ngIf="personForm.get('mobileNo').errors['maxlength']">Max 10 Char required in mobile Number.</span>
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col-sm-4">
+            City : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="city">
+        </div>
+    </div>
+    <div class="row m-1">
+        <div class="col">
+            <button class="btn btn-success" [disabled]="personForm.invalid">Submit</button>
+        </div>
+    </div>
+</form>
