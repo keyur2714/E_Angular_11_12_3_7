@@ -1,0 +1,25 @@
+<button class="btn btn-info" routerLink="/student-entry">Add New Student</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile No</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students"> 
+            <td><a [routerLink]="['/student-detail',student.id,student.name]" [queryParams]="{age : student.age,mobileNo : student.mobileNo}">{{student.id}}</a> </td>
+            <td><a [routerLink]="['student-details',student.id,student.name]" [queryParams]="{age : student.age,mobileNo : student.mobileNo}">{{student.name}}</a></td>
+            <td>{{student.age}}</td>
+            <td>{{student.mobileNo}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col">
+        <router-outlet></router-outlet>
+    </div>
+</div>
