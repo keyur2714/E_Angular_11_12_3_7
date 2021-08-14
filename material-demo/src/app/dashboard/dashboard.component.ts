@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { interval, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,11 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  subscription : Subscription;
+  numObservable : Observable<number> = interval(1000);
+  seqNum : number = 0;
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -30,4 +36,21 @@ export class DashboardComponent {
   );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  start() : void {
+    this.subscription = this.numObservable.subscribe(
+      (data : number)=>{
+          this.seqNum = data;        
+        }
+      ),
+      (error)=>{
+        console.log("Error : "+error);
+      },
+      ()=>{
+        console.log("Completed...!");
+      }
+  }
+  stop() : void {
+    this.subscription.unsubscribe();
+  }
 }

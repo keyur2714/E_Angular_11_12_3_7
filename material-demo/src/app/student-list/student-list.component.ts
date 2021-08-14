@@ -1,25 +1,44 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { StudentService } from '../student.service';
 import { StudentListDataSource, StudentListItem } from './student-list-datasource';
+import { Student } from './student.model';
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements AfterViewInit {
+export class StudentListComponent implements OnInit,AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<StudentListItem>;
-  dataSource: StudentListDataSource;
+  @ViewChild(MatTable, {static: false}) table: MatTable<Student>;
+  
+
+  dataSource : MatTableDataSource<Student> = new MatTableDataSource();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'city' , 'mobileNo' ,'email'];
 
-  constructor() {
-    this.dataSource = new StudentListDataSource();
+  constructor(private studentService : StudentService) {   
+  }
+
+  ngOnInit() : void{
+    this.getAllStudents();
+  }
+
+  getAllStudents() : void {
+    this.studentService.list().subscribe(
+      (students : Student[])=>{
+        this.dataSource.data = students;
+      }
+    )
+  }
+
+  detail(id : number) : void {
+    alert(id);
   }
 
   ngAfterViewInit(): void {
