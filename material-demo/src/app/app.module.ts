@@ -24,6 +24,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     StudentListComponent,
     DashboardComponent,
-    StudentEntryComponent
+    StudentEntryComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

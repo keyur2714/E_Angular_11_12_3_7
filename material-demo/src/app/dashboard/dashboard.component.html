@@ -1,5 +1,12 @@
+
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
+  <button mat-raised-button color="primary" type="submit" (click)="start()">
+    Call Observable
+  </button>
+  <h1 class="mat-h1">Dashboard - {{seqNum}}</h1> 
+  <button mat-raised-button color="primary" type="submit" (click)="stop()">
+    Stop Observable
+  </button>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
@@ -20,5 +27,5 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-  </mat-grid-list>
+  </mat-grid-list>    
 </div>
