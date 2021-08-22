@@ -1,7 +1,8 @@
 <form [formGroup]="studentForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title>Student Entry Form</mat-card-title>
+      <mat-card-title *ngIf="studentId === 0">Student Entry Form</mat-card-title>
+      <mat-card-title *ngIf="studentId !== 0">Student Update Form</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
@@ -52,7 +53,8 @@
       </div>      
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Save</button>
+      <button mat-raised-button color="primary" type="submit" *ngIf="studentId === 0">Save</button>
+      <button mat-raised-button color="primary" type="submit" *ngIf="studentId !== 0">Update</button>
     </mat-card-actions>
   </mat-card>
 </form>

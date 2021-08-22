@@ -1,0 +1,28 @@
+<h1>
+  Pipes Demo
+</h1>
+<p>
+  {{firstName | uppercase}}
+  {{lastName | lowercase}}
+</p>
+<p>
+  {{dateOfBirth | date : 'dd-MM-yyyy hh:mm:ss a'}}
+</p>
+<p>
+  Salary : {{salary |currency : 'USD'}}
+</p>
+<p>
+  {{course | json}}
+</p>
+<h3>
+  {{numberObservable | async}}
+</h3>
+<h4>
+  {{firstName | uppercase | welcome | lowercase}}
+</h4>
+<h3>
+  Mobile No : {{mobileNo | mask :'*':3}}
+</h3>
+<h4>
+  Account No : {{accountNo | mask :'#':4}}
+</h4>

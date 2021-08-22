@@ -25,4 +25,12 @@ export class StudentService {
   save(student : Student) : Observable<Student>{
     return this.httpClient.post<Student>(this.apUrl,student);
   }
+  
+  update(student : Student) : Observable<Student> {
+    return this.httpClient.put<Student>(this.apUrl+"/"+student.id,student);
+  }
+
+  delete(id : number) : Observable<void>{
+    return this.httpClient.delete<void>(this.apUrl+"/"+id);
+  }
 }

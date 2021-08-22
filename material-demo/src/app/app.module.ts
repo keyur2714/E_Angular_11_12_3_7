@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavComponent,
     StudentListComponent,
     DashboardComponent,
-    StudentEntryComponent
+    StudentEntryComponent,
+    StudentDetailComponent
   ],
   imports: [
     BrowserModule,
