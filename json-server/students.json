@@ -1,4 +1,22 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "keyurjava27@gmail.com",
+      "name": "keyur thakor",
+      "password": "India@123",
+      "role": "ADMIN",
+      "token": "abcd1234444"
+    },
+    {
+      "id": 2,
+      "username": "denishjava26@gmail.com",
+      "name": "denish patel",
+      "password": "Bharat@123",
+      "role": "USER",
+      "token": "ABCD1234444"
+    }
+  ],
   "students": [
     {
       "id": 32,

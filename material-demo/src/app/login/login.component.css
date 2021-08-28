@@ -1,0 +1,46 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .shipping-card {
+    min-width: 120px;
+    margin: 20px auto;
+  }
+  
+  .mat-radio-button {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .col:last-child {
+    margin-right: 0;
+  }
+  /* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: centre; display: block;
+  width: 120px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 24px 0 12px 0; padding-top: 20px;
+  padding-left: 120px;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+  

@@ -26,6 +26,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     StudentListComponent,
     DashboardComponent,
     StudentEntryComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

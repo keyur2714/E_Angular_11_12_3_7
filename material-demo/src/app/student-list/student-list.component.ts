@@ -39,7 +39,7 @@ export class StudentListComponent implements OnInit,AfterViewInit {
   }
 
   detail(id : number) : void {
-    this.router.navigate(['student-detail',id]);
+    this.router.navigate(['/home/student-detail',id]);
   }
 
   delete(id : number) : void {    
@@ -62,6 +62,6 @@ export class StudentListComponent implements OnInit,AfterViewInit {
   }
 
   edit(id : number) : void {
-    this.router.navigate(['student-update',id]);
+    this.router.navigate(['/home/student-update',id]);
   }
 }

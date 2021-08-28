@@ -1,0 +1,51 @@
+  
+  
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="imgcontainer">
+      <img src="../../assets/img/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        
+  
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Email Id" formControlName="userEmailId" >
+              <mat-error *ngIf="loginForm.controls['userEmailId'].hasError('required')">
+                User Email Id is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="loginForm.controls['userEmailId'].hasError('email')">
+                User Email Id is  <strong>Invalid.</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput    placeholder="Password" type="password" 
+                formControlName="userPassword"   >
+              <mat-error *ngIf="loginForm.controls['userPassword'].hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="loginForm.controls['userPassword'].hasError('minLength')">
+                Minimum 8 Digits <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      
+       
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" >Login</button>
+      </mat-card-actions> <!---->
+    </mat-card>
+  </form>
+  
