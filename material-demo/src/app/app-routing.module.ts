@@ -11,17 +11,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 
 const routes: Routes = [  
   {path : '' , component : LoginComponent},
-  {path : 'login',component : LoginComponent},
-  {    
-    path : 'home',component : NavComponent,canActivate : [AuthGuardService],canActivateChild : [AuthGuardService],    
-    children : [      
-      {path : 'dashboard',component : DashboardComponent},
-      {path : 'student-list',component : StudentListComponent},
-      {path : 'student-entry',component : StudentEntryComponent},
-      {path : 'student-update/:id',component : StudentEntryComponent},
-      {path : 'student-detail/:id',component : StudentDetailComponent}
-    ]
-  }, 
+  {path : 'login',component : LoginComponent},   
   {path : 'logout',component : LogoutComponent} 
 ];
 
@@ -29,4 +19,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+  constructor(){
+    console.log("App Routing Module Object Created...!");
+  }
+
+}

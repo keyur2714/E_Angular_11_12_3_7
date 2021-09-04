@@ -15,7 +15,7 @@ export class AuthGuardService implements CanActivate,CanActivateChild{
     //alert("Hi");
     let url = route.url;
     let stateUrl = state.url;
-    alert(url);
+    //alert(url);
     //alert(state.url);    
     if(this.authService.isLoggedIn){
       return true;
@@ -26,7 +26,7 @@ export class AuthGuardService implements CanActivate,CanActivateChild{
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {
-    alert(sessionStorage.getItem("userrole"));
+    //alert(sessionStorage.getItem("userrole"));
     let currentUser = sessionStorage.getItem("userrole");
     if(currentUser === 'USER'){
       alert("Sorry but you do not have permission for this action.");
