@@ -1,0 +1,24 @@
+
+
+	git clone https://github.com/keyur2714/E_Angular_11_2.git
+
+	cd E_Angular_11_2
+
+	git pull
+
+
+	npm install @capacitor/core @capacitor/cli --save
+
+	npx cap init
+
+	change angular.json outputDir to www 
+
+	ng build --prod
+
+	npx cap add android
+
+	npx cap copy android
+
+	npx cap open android
+android:usesCleartextTraffic="true"
+

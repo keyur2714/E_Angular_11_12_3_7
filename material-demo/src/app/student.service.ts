@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Student } from './student-list/student.model';
 
 @Injectable({
@@ -15,7 +15,11 @@ export class StudentService {
   }
 
   list() : Observable<Student[]>{
-    return this.httpClient.get<Student[]>(this.apUrl);
+    let student1 = new Student(1,'keyur','pune','7387029671','keyurjava27@gmail.com');
+    let student2 = new Student(2,'denish','surat','7387029111','denishjava27@gmail.com');
+    let student3 = new Student(3,'vinit','bardoli','7387029222','vinitjava27@gmail.com');
+    return of([student1,student2,student3]);
+    //return this.httpClient.get<Student[]>(this.apUrl);
   }
 
   getStudentById(id : number) : Observable<Student> {

@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { NavModule } from './nav/nav.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -34,26 +35,12 @@ import { NavModule } from './nav/nav.module';
   ],
   imports: [
     BrowserModule,
-    NavModule,
+    //NavModule, //it will be part of eager loading
     AppRoutingModule,
     BrowserAnimationsModule,    
-    ReactiveFormsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    HttpClientModule,    
+    ReactiveFormsModule,    
+    HttpClientModule,   
+    MaterialModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},    

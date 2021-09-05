@@ -18,6 +18,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { AppRoutingModule } from "../app-routing.module";
 import { DashboardComponent } from "../dashboard/dashboard.component";
+import { MaterialModule } from "../material.module";
 import { StudentDetailComponent } from "../student-detail/student-detail.component";
 import { StudentEntryComponent } from "../student-entry/student-entry.component";
 import { StudentListComponent } from "../student-list/student-list.component";
@@ -36,21 +37,7 @@ import { NavComponent } from "./nav.component";
         CommonModule,
         NavRoutingModule,
         ReactiveFormsModule,
-        LayoutModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatIconModule,
-        MatListModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatGridListModule,
-        MatCardModule,
-        MatMenuModule,
-        MatInputModule,
-        MatSelectModule,
-        MatRadioModule,
+        MaterialModule
     ],
     providers : []
 })

@@ -8,8 +8,9 @@ import { StudentListComponent } from "../student-list/student-list.component";
 import { NavComponent } from "./nav.component";
 
 const routes : Routes = [
-    {    
-        path : 'home',component : NavComponent,canActivate : [AuthGuardService],canActivateChild : [AuthGuardService],    
+    {    //below is for Eager Loading
+        // path : 'home',component : NavComponent,canActivate : [AuthGuardService],canActivateChild : [AuthGuardService],    
+        path : '',component : NavComponent,canActivate : [AuthGuardService],canActivateChild : [AuthGuardService],    
         children : [      
             {path : 'dashboard',component : DashboardComponent},
             {path : 'student-list',component : StudentListComponent},

@@ -1,0 +1,6 @@
+{
+	"appId": "com.webstack.material",
+	"appName": "material-demo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
