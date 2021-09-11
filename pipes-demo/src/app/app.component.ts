@@ -35,4 +35,8 @@ export class AppComponent implements OnInit{
     // )
   }
 
+  sum(num1,num2) : number {
+    return num1 + num2;
+  }
+
 }
